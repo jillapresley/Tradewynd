@@ -48,25 +48,27 @@
             <div class="search-form">
                 <div class="search-field">
                     <div class="search-field-icon">
-                        <i class="fas fa-plane-departure"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="search-field-content">
-                        <label>From</label>
-                        <input type="text" placeholder="Departure city" value="New York">
+                        <label>Where to?</label>
+                        <input type="text" placeholder="Destination" value="Los Angeles">
+                    </div>
+                </div>
+                <div class="search-field search-field-dates" onclick="document.getElementById('start-date').showPicker()">
+                    <div class="search-field-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="search-field-content">
+                        <label>Dates</label>
+                        <div class="date-display" id="date-display">Nov 13 - Nov 16</div>
+                        <input type="date" id="start-date" class="date-input-hidden" value="2024-11-13" onchange="updateDateDisplay()">
+                        <input type="date" id="end-date" class="date-input-hidden" value="2024-11-16" onchange="updateDateDisplay()">
                     </div>
                 </div>
                 <div class="search-field">
                     <div class="search-field-icon">
-                        <i class="fas fa-plane-arrival"></i>
-                    </div>
-                    <div class="search-field-content">
-                        <label>To</label>
-                        <input type="text" placeholder="Destination city" value="Los Angeles">
-                    </div>
-                </div>
-                <div class="search-field">
-                    <div class="search-field-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-user"></i>
                     </div>
                     <div class="search-field-content">
                         <label>Travelers</label>
@@ -79,7 +81,6 @@
                     </div>
                 </div>
                 <button class="btn btn-primary search-btn">
-                    <i class="fas fa-search"></i>
                     Search
                 </button>
             </div>
@@ -633,6 +634,29 @@
                 }
             });
         });
+        
+        // Date formatting function
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return months[date.getMonth()] + ' ' + date.getDate();
+        }
+        
+        // Update date display
+        function updateDateDisplay() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const dateDisplay = document.getElementById('date-display');
+            
+            if (startDate && endDate) {
+                dateDisplay.textContent = formatDate(startDate) + ' - ' + formatDate(endDate);
+            } else if (startDate) {
+                dateDisplay.textContent = formatDate(startDate);
+            }
+        }
+        
+        // Initialize date display on page load
+        document.addEventListener('DOMContentLoaded', updateDateDisplay);
     </script>
 </body>
 </html>
