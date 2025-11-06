@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradewynd - Buy & Sell Flight Seats</title>
+    <link rel="stylesheet" href="styles.css?v=33402">
+    <link rel="stylesheet" href="travel-partners.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#search" class="nav-link active">Search Flights</a>
+                <a href="#marketplace" class="nav-link">Marketplace</a>
+                <a href="#my-trips" class="nav-link">My Trips</a>
+                <a href="#sell-seat" class="nav-link">Sell Seat</a>
+            </div>
+            <div class="nav-user">
+                <button class="btn btn-outline btn-sm">Sign In</button>
+                <button class="btn btn-primary btn-sm">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-image">
+            <img src="airport-blueprint-sky.png" alt="Tradewynd Hero" class="hero-bg-image">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Flight Search -->
+        <div class="search-container">
+            <div class="search-form">
+                <div class="search-field">
+                    <label>From</label>
+                    <input type="text" placeholder="Departure city" value="New York">
+                </div>
+                <div class="search-field">
+                    <label>To</label>
+                    <input type="text" placeholder="Destination city" value="Los Angeles">
+                </div>
+                <div class="search-field">
+                    <label>Date</label>
+                    <input type="date" value="2024-02-15">
+                </div>
+                <div class="search-field">
+                    <label>Passengers</label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4+</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary search-btn">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+        <section class="how-it-works">
+            <div class="section-header">
+                <h2>A trusted marketplace to buy, sell, or upgrade seats with ease.</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card step-card-trust">
+                    <img src="alexander-mils.jpg" alt="Find Your Flight" class="step-trust-photo">
+                    <div class="step-trust-content">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Search. Swap. Sell.</h3>
+                        <p>Find open seats, switch flights with other passengers, or sell your seat in minutes.</p>
+                    </div>
+                </div>
+                <div class="step-card step-card-trust">
+                    <img src="handshake-2.jpg" alt="Handshake" class="step-trust-photo">
+                    <div class="step-trust-content">
+                        <div class="step-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Make a Deal</h3>
+                        <p>Connect safely with fellow passengers and complete a fair, verified exchange.</p>
+                    </div>
+                </div>
+                <div class="step-card step-card-trust">
+                    <img src="phone-talker.jpg" alt="Phone talker" class="step-trust-photo">
+                    <div class="step-trust-content">
+                        <div class="step-icon">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <h3>Book with Confidence</h3>
+                        <p>Complete the transaction and enjoy your flight with guaranteed seat security</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marketplace Section -->
+        <section id="marketplace" class="marketplace-section">
+            <div class="section-header">
+                <h2>Live Seat Marketplace</h2>
+                <div class="marketplace-filters">
+                    <select class="filter-select">
+                        <option>All Routes</option>
+                        <option>New York → Los Angeles</option>
+                        <option>Chicago → Miami</option>
+                        <option>Denver → Seattle</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="marketplace-content">
+                <div class="offers-panel">
+                    <h3>Available Seats</h3>
+                    <div class="offers-list">
+                        <div class="offer-card sell">
+                            <div class="offer-header">
+                                <div class="offer-type sell">
+                                    <i class="fas fa-arrow-up"></i>
+                                    SELLING
+                                </div>
+                                <div class="offer-price">$450</div>
+                            </div>
+                            <div class="offer-details">
+                                <p><strong>AA 1234</strong> - Seat 12A (Window)</p>
+                                <p>New York → Los Angeles • Feb 15, 2:30 PM</p>
+                                <p>Passenger: John S. • Verified</p>
+                                <p>Reason: Business meeting cancelled</p>
+                            </div>
+                            <div class="offer-actions">
+                                <button class="btn btn-success">Buy Seat</button>
+                                <button class="btn btn-outline">Message</button>
+                            </div>
+                        </div>
+
+                        <div class="offer-card buy">
+                            <div class="offer-header">
+                                <div class="offer-type buy">
+                                    <i class="fas fa-arrow-down"></i>
+                                    WANTED
+                                </div>
+                                <div class="offer-price">$380</div>
+                            </div>
+                            <div class="offer-details">
+                                <p><strong>DL 5678</strong> - Any Seat</p>
+                                <p>Chicago → Miami • Feb 16, 6:15 PM</p>
+                                <p>Passenger: Sarah M. • Verified</p>
+                                <p>Reason: Family emergency</p>
+                            </div>
+                            <div class="offer-actions">
+                                <button class="btn btn-success">Sell to Sarah</button>
+                                <button class="btn btn-outline">Message</button>
+                            </div>
+                        </div>
+
+                        <div class="offer-card sell">
+                            <div class="offer-header">
+                                <div class="offer-type sell">
+                                    <i class="fas fa-arrow-up"></i>
+                                    SELLING
+                                </div>
+                                <div class="offer-price">$520</div>
+                            </div>
+                            <div class="offer-details">
+                                <p><strong>UA 9012</strong> - Seat 8C (Aisle)</p>
+                                <p>Denver → Seattle • Feb 17, 8:45 AM</p>
+                                <p>Passenger: Mike R. • Verified</p>
+                                <p>Reason: Found cheaper alternative</p>
+                            </div>
+                            <div class="offer-actions">
+                                <button class="btn btn-success">Buy Seat</button>
+                                <button class="btn btn-outline">Message</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="marketplace-stats">
+                    <h3>Market Insights</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">$350</div>
+                                <div class="stat-label">Avg. Price</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">5%</div>
+                                <div class="stat-label">Platform Fee</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">2.3 min</div>
+                                <div class="stat-label">Avg. Match Time</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">247</div>
+                                <div class="stat-label">Active Users</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Trips Section -->
+        <section id="my-trips" class="my-trips-section">
+            <div class="section-header">
+                <h2>My Trips</h2>
+                <p>Manage your upcoming flights and seat trades</p>
+            </div>
+            
+            <div class="trips-grid">
+                <div class="trip-card">
+                    <div class="trip-header">
+                        <div class="trip-info">
+                            <h3>AA 1234</h3>
+                            <p>New York → Los Angeles</p>
+                            <span class="trip-time">Feb 15, 2:30 PM</span>
+                        </div>
+                        <div class="trip-status selling">
+                            <i class="fas fa-tag"></i>
+                            Selling Seat
+                        </div>
+                    </div>
+                    <div class="trip-details">
+                        <div class="detail-row">
+                            <span>Seat:</span>
+                            <span class="highlight">12A (Window)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Asking Price:</span>
+                            <span class="highlight">$450</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Interest:</span>
+                            <span class="highlight">3 offers</span>
+                        </div>
+                    </div>
+                    <div class="trip-actions">
+                        <button class="btn btn-outline">View Offers</button>
+                        <button class="btn btn-primary">Manage</button>
+                    </div>
+                </div>
+
+                <div class="trip-card">
+                    <div class="trip-header">
+                        <div class="trip-info">
+                            <h3>DL 5678</h3>
+                            <p>Chicago → Miami</p>
+                            <span class="trip-time">Feb 16, 6:15 PM</span>
+                        </div>
+                        <div class="trip-status buying">
+                            <i class="fas fa-shopping-cart"></i>
+                            Looking for Seat
+                        </div>
+                    </div>
+                    <div class="trip-details">
+                        <div class="detail-row">
+                            <span>Budget:</span>
+                            <span class="highlight">$400</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Seat Preference:</span>
+                            <span class="highlight">Any</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Matches:</span>
+                            <span class="highlight">2 available</span>
+                        </div>
+                    </div>
+                    <div class="trip-actions">
+                        <button class="btn btn-outline">Browse Seats</button>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="trip-card">
+                    <div class="trip-header">
+                        <div class="trip-info">
+                            <h3>UA 9012</h3>
+                            <p>Denver → Seattle</p>
+                            <span class="trip-time">Feb 17, 8:45 AM</span>
+                        </div>
+                        <div class="trip-status confirmed">
+                            <i class="fas fa-check-circle"></i>
+                            Confirmed
+                        </div>
+                    </div>
+                    <div class="trip-details">
+                        <div class="detail-row">
+                            <span>Seat:</span>
+                            <span class="highlight">8C (Aisle)</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Price Paid:</span>
+                            <span class="highlight">$520</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Status:</span>
+                            <span class="highlight">Ready to Fly</span>
+                        </div>
+                    </div>
+                    <div class="trip-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-primary">Check In</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sell Seat Section -->
+        <section id="sell-seat" class="sell-seat-section">
+            <div class="section-header">
+                <h2>Sell Your Seat</h2>
+                <p>Turn your unwanted flight into cash</p>
+            </div>
+            
+            <div class="sell-container">
+                <div class="sell-form">
+                    <h3>List Your Seat</h3>
+                    <form class="seat-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Flight Number</label>
+                                <input type="text" placeholder="e.g., AA 1234" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Seat Number</label>
+                                <input type="text" placeholder="e.g., 12A" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Route</label>
+                                <input type="text" placeholder="New York → Los Angeles" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Date & Time</label>
+                                <input type="datetime-local" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Asking Price ($)</label>
+                                <input type="number" placeholder="450" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Seat Type</label>
+                                <select required>
+                                    <option>Window</option>
+                                    <option>Aisle</option>
+                                    <option>Middle</option>
+                                    <option>Exit Row</option>
+                                    <option>Premium</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Reason for Selling</label>
+                            <textarea placeholder="e.g., Business meeting cancelled, found alternative flight..." rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Contact Preference</label>
+                            <div class="contact-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span>Allow messages from potential buyers</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span>Accept counter-offers</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-tag"></i>
+                            List My Seat
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="sell-benefits">
+                    <h3>Why Sell on Tradewynd?</h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Get Cash Fast</h4>
+                                <p>Receive payment within 24 hours of successful sale</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Secure Transactions</h4>
+                                <p>Protected payments with buyer verification</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Quick Sales</h4>
+                                <p>Average seat sells within 2.3 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Transparent Fees</h4>
+                                <p>Clear, upfront pricing with no hidden costs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Partners Section -->
+        <section class="travel-partners">
+            <div class="section-header">
+                <h2>Travel Partners</h2>
+                <p>Sold your seat? Save up to 30% on hotels, lounges, and transportation</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Marriott Hotels</h3>
+                    <p class="discount">25% off</p>
+                    <p class="partner-desc">Premium accommodations worldwide</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Hilton Hotels</h3>
+                    <p class="discount">30% off</p>
+                    <p class="partner-desc">Luxury stays and business centers</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Priority Pass</h3>
+                    <p class="discount">40% off</p>
+                    <p class="partner-desc">Access to 1,300+ lounges globally</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <h3>Centurion Lounge</h3>
+                    <p class="discount">35% off</p>
+                    <p class="partner-desc">Premium dining and relaxation</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Hertz</h3>
+                    <p class="discount">25% off</p>
+                    <p class="partner-desc">Car rentals at airports worldwide</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-taxi"></i>
+                    </div>
+                    <h3>Uber</h3>
+                    <p class="discount">20% off</p>
+                    <p class="partner-desc">Rides to and from airports</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Airbnb</h3>
+                    <p class="discount">20% off</p>
+                    <p class="partner-desc">Unique homes and experiences</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+                
+                <div class="partner-box">
+                    <div class="partner-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Delta Sky Club</h3>
+                    <p class="discount">30% off</p>
+                    <p class="partner-desc">Comfort and connectivity</p>
+                    <button class="btn btn-outline">Book Now</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal for Flight Management -->
+    <div id="flightModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Manage Flight</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Flight Number</label>
+                    <input type="text" value="AA 1234" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Route</label>
+                    <input type="text" value="New York → Los Angeles" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Oversold Amount</label>
+                    <input type="number" value="7" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Minimum Offer Price</label>
+                    <input type="number" value="300" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Platform Fee (%)</label>
+                    <input type="number" value="8.5" min="0" max="20" step="0.1">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline">Cancel</button>
+                <button class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

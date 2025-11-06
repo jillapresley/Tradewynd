@@ -1,0 +1,120 @@
+/* Travel Partners Section - Expedia Style */
+.travel-partners {
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.travel-partners .section-header {
+    display: block;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.travel-partners .section-header h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: var(--spacing-md);
+}
+
+.travel-partners .section-header p {
+    font-size: var(--font-size-lg);
+    color: var(--dark-gray);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-box {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--soft-gray);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-box:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--steel-blue);
+}
+
+.partner-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--steel-blue) 0%, var(--navy-accent) 100%);
+}
+
+.partner-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--steel-blue) 0%, var(--navy-accent) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.partner-box h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.discount {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--success-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.partner-desc {
+    font-size: var(--font-size-base);
+    color: var(--dark-gray);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-lg);
+}
+
+.partner-box .btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Responsive Design for Travel Partners */
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .partner-box {
+        padding: var(--spacing-lg);
+    }
+    
+    .partner-icon {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-size-xl);
+    }
+}
