@@ -47,25 +47,36 @@
         <div class="search-container">
             <div class="search-form">
                 <div class="search-field">
-                    <label>From</label>
-                    <input type="text" placeholder="Departure city" value="New York">
+                    <div class="search-field-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <div class="search-field-content">
+                        <label>From</label>
+                        <input type="text" placeholder="Departure city" value="New York">
+                    </div>
                 </div>
                 <div class="search-field">
-                    <label>To</label>
-                    <input type="text" placeholder="Destination city" value="Los Angeles">
+                    <div class="search-field-icon">
+                        <i class="fas fa-plane-arrival"></i>
+                    </div>
+                    <div class="search-field-content">
+                        <label>To</label>
+                        <input type="text" placeholder="Destination city" value="Los Angeles">
+                    </div>
                 </div>
                 <div class="search-field">
-                    <label>Date</label>
-                    <input type="date" value="2024-02-15">
-                </div>
-                <div class="search-field">
-                    <label>Passengers</label>
-                    <select>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4+</option>
-                    </select>
+                    <div class="search-field-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="search-field-content">
+                        <label>Travelers</label>
+                        <select>
+                            <option>1 traveler</option>
+                            <option>2 travelers</option>
+                            <option>3 travelers</option>
+                            <option>4+ travelers</option>
+                        </select>
+                    </div>
                 </div>
                 <button class="btn btn-primary search-btn">
                     <i class="fas fa-search"></i>
