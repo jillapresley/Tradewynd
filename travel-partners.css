@@ -1,7 +1,8 @@
 /* Travel Partners Section - Expedia Style */
 .travel-partners {
-    margin-bottom: var(--spacing-2xl);
     text-align: center;
+    margin-top: 48px;
+    margin-bottom: var(--spacing-2xl);
 }
 
 .travel-partners .section-header {
@@ -13,52 +14,65 @@
     margin-bottom: var(--spacing-2xl);
 }
 
+.travel-partners h2,
 .travel-partners .section-header h2 {
-    font-size: var(--font-size-4xl);
     font-weight: 700;
-    color: var(--charcoal);
-    margin-bottom: var(--spacing-md);
+    font-size: 1.4rem;
+    color: #111827;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #3BAFDA, #68D2C5) 1;
+    display: inline-block;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
 }
 
+.travel-partners p,
 .travel-partners .section-header p {
-    font-size: var(--font-size-lg);
-    color: var(--dark-gray);
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 32px;
 }
 
-.partners-grid {
+.partners-grid,
+.partner-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    justify-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.partner-box {
-    background: white;
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-xl);
-    border: 1px solid var(--soft-gray);
-    transition: all 0.3s ease;
+.partner-box,
+.partner-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    max-width: 240px;
+    padding: 20px 18px;
     text-align: center;
-    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
 }
 
-.partner-box:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--steel-blue);
-}
-
-.partner-box::before {
-    content: '';
+.partner-box::before,
+.partner-card::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, var(--steel-blue) 0%, var(--navy-accent) 100%);
+    height: 6px;
+    background: linear-gradient(90deg, #3BAFDA, #68D2C5);
+}
+
+.partner-box:hover,
+.partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
 .partner-icon {
@@ -75,30 +89,52 @@
     box-shadow: var(--shadow-md);
 }
 
-.partner-box h3 {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: var(--spacing-sm);
-}
-
-.discount {
-    font-size: var(--font-size-xl);
+.partner-box h3,
+.partner-card h3 {
+    font-size: 1rem;
     font-weight: 700;
-    color: var(--success-green);
+    color: #111827;
+    margin-top: 14px;
     margin-bottom: var(--spacing-sm);
 }
 
-.partner-desc {
-    font-size: var(--font-size-base);
-    color: var(--dark-gray);
+.discount,
+.partner-card .discount {
+    color: #057642;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+.partner-desc,
+.partner-card p {
+    color: #6b7280;
+    font-size: 0.85rem;
+    min-height: 36px;
     line-height: 1.5;
     margin-bottom: var(--spacing-lg);
 }
 
-.partner-box .btn {
+.partner-box .btn,
+.partner-card button,
+.partner-card .book-btn {
+    background: linear-gradient(90deg, #3BAFDA, #68D2C5);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
     width: 100%;
     margin-top: auto;
+}
+
+.partner-box .btn:hover,
+.partner-card button:hover,
+.partner-card .book-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Responsive Design for Travel Partners */
@@ -142,22 +178,72 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .travel-partners h2,
     .travel-partners .section-header h2 {
         font-size: var(--font-size-xl);
     }
     
+    .travel-partners p,
     .travel-partners .section-header p {
         font-size: var(--font-size-sm);
     }
     
-    .partners-grid {
+    .partners-grid,
+    .partner-grid {
+        gap: 16px;
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    
+    .partner-box,
+    .partner-card {
+        max-width: 90%;
+        padding: 16px 14px;
+    }
+    
+    .partner-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .partner-box h3,
+    .partner-card h3 {
+        font-size: 0.95rem;
+    }
+    
+    .discount,
+    .partner-card .discount {
+        font-size: 0.85rem;
+    }
+    
+    .partner-desc,
+    .partner-card p {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .travel-partners h2,
+    .travel-partners .section-header h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .travel-partners p,
+    .travel-partners .section-header p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .partners-grid,
+    .partner-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
         padding: 0;
     }
     
-    .partner-box {
+    .partner-box,
+    .partner-card {
         padding: var(--spacing-md);
     }
     
@@ -167,15 +253,18 @@
         font-size: var(--font-size-lg);
     }
     
-    .partner-box h3 {
+    .partner-box h3,
+    .partner-card h3 {
         font-size: var(--font-size-base);
     }
     
-    .discount {
+    .discount,
+    .partner-card .discount {
         font-size: var(--font-size-base);
     }
     
-    .partner-desc {
+    .partner-desc,
+    .partner-card p {
         font-size: var(--font-size-xs);
     }
 }

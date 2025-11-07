@@ -1,5 +1,10 @@
 /* Tradewynd - Modern Aviation-Inspired Design */
 
+/* ===== Tradewynd UI Polish (drop-in) ===== */
+
+/* 1) Font + CSS variables */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
     /* Sophisticated Gray & Navy Palette */
     --primary-navy: #1e293b;
@@ -25,6 +30,34 @@
     --warning-orange: #f59e0b;
     --error-red: #ef4444;
     --info-cyan: #06b6d4;
+    --accent-gold: #fbbf24;
+    
+    /* Base Colors */
+    --white: #ffffff;
+    --deep-navy: #1e293b;
+    
+    /* UI Polish - Core palette */
+    --bg: #e9eff6;                  /* page background (blue-gray) */
+    --surface: #ffffff;             /* card/nav bg */
+    --muted-surface: #f4f7fb;       /* soft panels (insights) */
+    --text: #111827;                /* main text */
+    --muted: #6b7280;               /* secondary text */
+    --line: #e5e7eb;                /* dividers */
+    
+    /* UI Polish - Brand accents */
+    --primary: #1D9BF0;             /* CTA blue */
+    --primary-600: #0d8ee9;
+    --grad-a: #3BAFDA;              /* subtle sky gradient */
+    --grad-b: #68D2C5;
+    
+    /* UI Polish - States */
+    --good: #16a34a;                /* WANTED */
+    --warn: #ef4444;                /* SELLING */
+    
+    /* UI Polish - Elevation */
+    --shadow-1: 0 2px 8px rgba(17,24,39,0.06);
+    --shadow-2: 0 8px 24px rgba(17,24,39,0.08);
+    --radius: 14px;
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -65,25 +98,47 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--font-family);
-    background: #cbd5e1;
-    color: var(--charcoal);
+html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* UI Polish - Typography */
+h1, h2, h3 { 
+    color: var(--text); 
+    line-height: 1.2; 
+}
+
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+
+p, small { color: var(--muted); }
+
 /* Navigation */
-.navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--medium-gray);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.navbar, header.navbar {
+    position: sticky; 
+    top: 0; 
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow-sm);
     width: 100%;
+}
+
+.navbar .logo { 
+    font-weight: 700; 
+    letter-spacing: 0.2px;
+    background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    color: transparent;
 }
 
 .nav-container {
@@ -264,16 +319,17 @@ body {
 
 
 .hero-title {
-    font-size: var(--font-size-4xl);
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
     font-weight: 700;
+    letter-spacing: 0.1px;
     margin-bottom: var(--spacing-md);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     max-width: 600px;
 }
 
 .hero-subtitle {
-    font-size: var(--font-size-lg);
-    opacity: 0.95;
+    font-size: 1rem;
+    color: var(--muted);
     margin-bottom: 0;
     font-weight: 400;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -321,31 +377,61 @@ body {
 }
 
 /* Buttons */
-.btn {
+.btn, .btn-primary, .btn-secondary {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border: none;
-    border-radius: var(--radius-md);
-    font-weight: 500;
-    font-size: var(--font-size-sm);
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 1px solid transparent;
     cursor: pointer;
-    transition: all 0.2s ease;
     text-decoration: none;
+    transition: box-shadow .15s ease, transform .15s ease, background .15s ease;
+    font-size: var(--font-size-sm);
     font-family: inherit;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--light-navy) 100%);
-    color: white;
-    box-shadow: var(--shadow-sm);
+.btn-primary { 
+    background-color: var(--deep-navy);
+    color: var(--white);
 }
 
-.btn-primary:hover {
-    background: linear-gradient(135deg, var(--light-navy) 0%, var(--secondary-navy) 100%);
+.btn-primary:hover { 
+    background-color: var(--accent-gold);
+    color: var(--deep-navy);
+    box-shadow: 0 0 0 4px rgba(251,191,36,.15); 
     transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: #f8fafc; 
+    color: var(--text); 
+    border-color: var(--line);
+}
+
+.btn-secondary:hover { 
+    box-shadow: 0 0 0 4px rgba(2,6,23,.06); 
+    transform: translateY(-1px); 
+}
+
+.btn:focus-visible { 
+    outline: 3px solid rgba(29,155,240,.4); 
+    outline-offset: 2px; 
+}
+
+/* Info Card */
+.info-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
 }
 
 .btn-outline {
@@ -367,6 +453,88 @@ body {
 .btn-success:hover {
     background: var(--deep-navy);
     transform: translateY(-1px);
+}
+
+/* UI Polish - Containers & cards */
+.container, .page-wrap { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 24px; 
+}
+
+.card, .panel, .listing-card, .insights-card, .trip-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-1);
+}
+
+.card:hover, .listing-card:hover, .insights-card:hover, .trip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* UI Polish - Section titles */
+.section-title { 
+    font-size: 1.35rem; 
+    font-weight: 700; 
+    margin: 10px 0 16px;
+}
+
+/* UI Polish - Listing cards (Live Seat Marketplace) */
+.listing-card { 
+    padding: 18px 18px 14px; 
+    position: relative; 
+}
+
+.listing-header { 
+    display: flex; 
+    align-items: flex-start; 
+    gap: 12px; 
+}
+
+.listing-title { 
+    font-weight: 600; 
+    color: var(--text); 
+}
+
+.listing-meta { 
+    color: var(--muted); 
+    font-size: 0.95rem; 
+}
+
+.listing-price {
+    position: absolute; 
+    right: 18px; 
+    top: 18px;
+    font-weight: 700; 
+    font-size: 1.15rem;
+}
+
+.badge { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px;
+    padding: 6px 10px; 
+    border-radius: 999px; 
+    font-size: .78rem; 
+    font-weight: 600;
+    border: 1px solid transparent; 
+    background: #f8fafc; 
+    color: var(--muted);
+}
+
+.badge-selling { 
+    background: #fff1f2; 
+    color: var(--warn); 
+    border-color: #fecdd3; 
+}
+
+.badge-wanted { 
+    background: #ecfdf5; 
+    color: var(--good); 
+    border-color: #bbf7d0; 
 }
 
 /* Flight Grid */
@@ -1088,6 +1256,12 @@ body {
     height: 40px;
     flex-shrink: 0;
     align-self: flex-end;
+}
+
+.search-btn:hover,
+.search-button:hover {
+    background-color: var(--accent-gold);
+    color: var(--deep-navy);
 }
 
 /* How It Works */
@@ -2055,6 +2229,168 @@ body {
     }
 }
 
+/* UI Polish - Market Insights (right column) */
+.insights { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+}
+
+.insights-card { 
+    padding: 14px 16px; 
+    background: var(--muted-surface); 
+}
+
+.insight-row { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.insight-icon {
+    width: 36px; 
+    height: 36px; 
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+    display: grid; 
+    place-items: center; 
+    color: #fff; 
+    font-weight: 700;
+}
+
+.insight-title { 
+    color: var(--muted); 
+    font-size: .85rem; 
+}
+
+.insight-value { 
+    color: var(--text); 
+    font-weight: 700; 
+    font-size: 1.05rem; 
+}
+
+/* UI Polish - My Trips cards */
+.trip-card { 
+    padding: 16px; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.trip-card::before {
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    bottom: 0; 
+    width: 5px; 
+    background: linear-gradient(180deg, var(--grad-a), var(--grad-b));
+}
+
+.trip-title { 
+    font-weight: 700; 
+}
+
+.trip-meta { 
+    color: var(--muted); 
+}
+
+/* UI Polish - Forms (Sell Seat) */
+.form, form { 
+    display: grid; 
+    gap: 12px; 
+}
+
+input[type="text"], input[type="number"], input[type="datetime-local"], select, textarea {
+    background: #fff; 
+    border: 1px solid var(--line); 
+    border-radius: 10px; 
+    padding: 10px 12px;
+    font: inherit; 
+    color: var(--text);
+}
+
+input::placeholder, textarea::placeholder { 
+    color: #9ca3af; 
+}
+
+.form-hint { 
+    font-size: .85rem; 
+    color: var(--muted); 
+}
+
+/* UI Polish - Hero (subtle brand lift) */
+.hero-gradient {
+    background: linear-gradient(180deg, rgba(59,175,218,0.14), rgba(104,210,197,0));
+}
+
+.hero-title {
+    font-size: clamp(1.6rem, 2vw, 2.2rem); /* was 1.8–2.6rem */
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;   /* slightly smaller */
+    color: var(--muted);
+}
+
+/* UI Polish - Utility spacing */
+.stack-12 > * + * { 
+    margin-top: 12px; 
+}
+
+.stack-16 > * + * { 
+    margin-top: 16px; 
+}
+
+.stack-24 > * + * { 
+    margin-top: 24px; 
+}
+
+/* UI Polish - Hover elevation for interactive rows */
+.hover-lift:hover { 
+    transform: translateY(-2px); 
+    box-shadow: var(--shadow-2); 
+}
+
+/* UI Polish - Motion prefs */
+@media (prefers-reduced-motion: reduce) {
+    * { 
+        transition: none !important; 
+        animation: none !important; 
+    }
+}
+
+/* UI Polish - Responsive */
+@media (max-width: 960px) {
+    .container, .page-wrap { 
+        padding: 16px; 
+    }
+    
+    .listing-price { 
+        position: static; 
+        margin-left: auto; 
+    }
+    
+    .insights { 
+        margin-top: 16px; 
+    }
+}
+
+/* UI Polish - Dark mode (optional, gentle) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #111827; 
+        --surface: #181f2a; 
+        --muted-surface: #1f2937;
+        --text: #e5e7eb; 
+        --muted: #9ca3af; 
+        --line: #2b3444;
+        --shadow-1: 0 2px 12px rgba(0,0,0,0.35);
+        --shadow-2: 0 14px 40px rgba(0,0,0,0.5);
+    }
+}
+
 @media (max-width: 480px) {
     .nav-container {
         height: 56px;
@@ -2187,3 +2523,129 @@ body {
         gap: var(--spacing-md);
     }
 }
+/* === Hero Text Resize === */
+.hero-title {
+    font-size: clamp(1.4rem, 2vw, 2rem) !important; /* smaller headline */
+    line-height: 1.1;
+    letter-spacing: 0.2px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); /* optional for readability */
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem !important; /* smaller tagline */
+    line-height: 1.35;
+    opacity: 0.9;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+
+/* === Tradewynd Marketplace Polish === */
+
+/* Section Headers */
+h2, .section-title, .marketplace-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #111827;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #3BAFDA, #68D2C5) 1;
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 18px;
+}
+
+/* Listing Cards */
+.listing-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    transition: all 0.2s ease;
+    padding: 16px 18px;
+}
+
+.listing-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* Price emphasis */
+.listing-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Status Badges */
+.badge-selling {
+    background: #ffeef0;
+    color: #d72b2b;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+.badge-wanted {
+    background: #e6ffed;
+    color: #057642;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+/* Buttons */
+.btn, button, .buy-btn, .sell-btn {
+    border-radius: 8px;
+    transition: all 0.15s ease;
+}
+
+.btn:hover, button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Market Insights */
+.insights, .market-insights {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.insights-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.insights-card .label {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.insights-card .value {
+    font-weight: 700;
+    color: #111827;
+}
+
+/* My Trips divider */
+.my-trips {
+    border-top: 1px solid #e5e7eb;
+    margin-top: 32px;
+    padding-top: 24px;
+}
+
+/* Mobile Responsive tweaks */
+@media (max-width: 960px) {
+    .marketplace-layout {
+        flex-wrap: wrap;
+    }
+    
+    .insights, .market-insights {
+        margin-top: 16px;
+        width: 100%;
+    }
+}
+  
