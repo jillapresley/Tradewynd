@@ -2169,6 +2169,71 @@ p, small { color: var(--muted); }
     
     .marketplace-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .offers-panel {
+        padding: var(--spacing-md);
+    }
+    
+    .offers-panel h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .offer-card,
+    .listing-card {
+        padding: var(--spacing-md);
+    }
+    
+    .listing-header {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .listing-price {
+        font-size: 1.1rem;
+    }
+    
+    .listing-title {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .listing-meta {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .marketplace-stats,
+    .insights {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+    
+    .marketplace-stats h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .stats-grid {
+        gap: var(--spacing-sm);
+    }
+    
+    .insights-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .filter-select {
+        width: 100%;
+        min-height: 44px;
+        font-size: var(--font-size-base);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .marketplace-filters {
+        width: 100%;
     }
     
     .analytics-grid {
@@ -2189,6 +2254,16 @@ p, small { color: var(--muted); }
     
     .sell-container {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .sell-form {
+        padding: var(--spacing-lg);
+        border-width: 3px;
+    }
+    
+    .sell-benefits {
+        margin-top: var(--spacing-lg);
     }
     
     .search-row {
@@ -2197,6 +2272,26 @@ p, small { color: var(--muted); }
     
     .form-row {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .trips-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .trip-card {
+        padding: var(--spacing-md);
+    }
+    
+    .trip-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .trip-status {
+        align-self: flex-start;
     }
     
     .hero-cta {
@@ -2212,7 +2307,9 @@ p, small { color: var(--muted); }
     }
     
     .section-header h2 {
-        font-size: var(--font-size-xl);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111827;
     }
     
     .modal-content {
@@ -2512,15 +2609,175 @@ input::placeholder, textarea::placeholder {
     }
     
     .section-header h2 {
+        font-size: 1.375rem;
+        font-weight: 700;
+        color: #111827;
+        line-height: 1.3;
+    }
+    
+    .marketplace-section {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .offers-panel {
+        padding: var(--spacing-sm);
+    }
+    
+    .offer-card,
+    .listing-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .listing-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .listing-price {
+        font-size: 1rem;
+        margin-top: var(--spacing-xs);
+    }
+    
+    .badge {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    .listing-title {
+        font-size: var(--font-size-sm);
+        line-height: 1.4;
+    }
+    
+    .listing-meta {
+        font-size: 0.75rem;
+    }
+    
+    .offer-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .offer-actions .btn {
+        width: 100%;
+        min-height: 44px;
+    }
+    
+    .marketplace-stats,
+    .insights {
+        padding: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+    
+    .stats-grid {
+        gap: var(--spacing-sm);
+    }
+    
+    .insights-card {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .insight-value {
         font-size: var(--font-size-lg);
+    }
+    
+    .insight-title {
+        font-size: var(--font-size-xs);
+    }
+    
+    .trips-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .trip-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .trip-info h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .trip-info p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .trip-details {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .detail-row {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .sell-form {
+        padding: var(--spacing-md);
+        border-width: 2px;
+    }
+    
+    .sell-form h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .form-group {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .form-group label {
+        font-size: var(--font-size-sm);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: var(--spacing-sm) var(--spacing-md);
+        min-height: 44px;
+    }
+    
+    .benefits-list {
+        gap: var(--spacing-md);
+    }
+    
+    .benefit-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .benefit-content h4 {
+        font-size: var(--font-size-base);
+    }
+    
+    .benefit-content p {
+        font-size: var(--font-size-sm);
     }
     
     .partners-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: 0 var(--spacing-sm);
     }
     
     .stats-grid {
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+    
+    .main-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-md);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .how-it-works,
+    .marketplace-section,
+    .my-trips-section,
+    .sell-seat-section,
+    .travel-partners {
+        margin-bottom: var(--spacing-xl);
+        padding: 0 var(--spacing-sm);
     }
 }
 /* === Hero Text Resize === */
@@ -2541,7 +2798,7 @@ input::placeholder, textarea::placeholder {
 
 /* === Tradewynd Marketplace Polish === */
 
-/* Section Headers */
+/* Section Headers - Desktop only */
 h2, .section-title, .marketplace-title {
     font-weight: 700;
     font-size: 1.25rem;
@@ -2551,6 +2808,19 @@ h2, .section-title, .marketplace-title {
     display: inline-block;
     padding-bottom: 4px;
     margin-bottom: 18px;
+}
+
+/* Remove gradient border on mobile for better visibility */
+@media (max-width: 768px) {
+    h2, .section-title, .marketplace-title {
+        border-bottom: none;
+        border-image: none;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 1rem;
+    }
 }
 
 /* Listing Cards */
