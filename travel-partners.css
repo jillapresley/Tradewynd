@@ -19,8 +19,8 @@
     font-weight: 700;
     font-size: 1.5rem;
     color: #111827;
-    border-bottom: none;
-    border-image: none;
+    border-bottom: none !important;
+    border-image: none !important;
     display: block;
     padding-bottom: 0;
     margin-bottom: 12px;
