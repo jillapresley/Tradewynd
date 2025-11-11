@@ -17,12 +17,12 @@
 .travel-partners h2,
 .travel-partners .section-header h2 {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #111827;
-    border-bottom: 2px solid transparent;
-    border-image: linear-gradient(90deg, #3BAFDA, #68D2C5) 1;
-    display: inline-block;
-    padding-bottom: 6px;
+    border-bottom: none;
+    border-image: none;
+    display: block;
+    padding-bottom: 0;
     margin-bottom: 12px;
 }
 
