@@ -2630,13 +2630,27 @@ input::placeholder, textarea::placeholder {
         line-height: 1.3;
     }
     
-    /* Ensure all headings are visible on mobile */
+    /* Ensure all headings are visible on mobile - Light mode */
     h2, .section-title, .marketplace-title {
         color: #111827 !important;
     }
     
     .how-it-works .section-header h2 {
         color: var(--charcoal) !important;
+    }
+}
+
+/* Small mobile + Dark Mode: Use light text for headings */
+@media (max-width: 480px) and (prefers-color-scheme: dark) {
+    h2, .section-title, .marketplace-title,
+    .section-header h2,
+    .how-it-works .section-header h2,
+    .marketplace-section .section-header h2,
+    .my-trips-section .section-header h2,
+    .sell-seat-section .section-header h2,
+    .travel-partners h2,
+    .travel-partners .section-header h2 {
+        color: #e5e7eb !important;
     }
     
     .marketplace-section {
@@ -2846,7 +2860,7 @@ h2, .section-title, .marketplace-title {
         margin-bottom: 1rem;
     }
     
-    /* Ensure headings are visible on mobile with proper contrast */
+    /* Ensure headings are visible on mobile with proper contrast - Light mode */
     .section-header h2,
     .how-it-works .section-header h2,
     .marketplace-section .section-header h2,
@@ -2856,6 +2870,20 @@ h2, .section-title, .marketplace-title {
     .travel-partners .section-header h2 {
         color: #111827 !important;
         font-weight: 700;
+    }
+}
+
+/* Mobile + Dark Mode: Use light text for headings */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    h2, .section-title, .marketplace-title,
+    .section-header h2,
+    .how-it-works .section-header h2,
+    .marketplace-section .section-header h2,
+    .my-trips-section .section-header h2,
+    .sell-seat-section .section-header h2,
+    .travel-partners h2,
+    .travel-partners .section-header h2 {
+        color: #e5e7eb !important;
     }
 }
 
